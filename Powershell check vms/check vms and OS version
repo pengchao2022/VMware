@@ -1,0 +1,4 @@
+# this script is to get all the vms' OS version in vCenter
+
+
+Get-View -ViewType VirtualMachine -Filter @{"Runtime.PowerState" ="poweredOn"} | Where-Object { $_.Guest.GuestFullname} | Sort-Object Name |Select-Object Name, @{N="NumCPU"; E={$_.Config.Hardware.NumCPU}}, @{N="MemoryMB"; E={$_.Config.Hardware.MemoryMB}},  @{N="VmHost"; E={$_.Runtime.host}}, @{N="PowerState"; E={$_.Runtime.PowerState}},  @{N=”InstalledOS”;E={$_.Guest.GuestFullName}}, @{N=”ConfiguredOS”;E={$_.Summary.Config.GuestFullName}} | Export-Csv 'D:\bwvcentervm.csv' -NoTypeInformation -Force
