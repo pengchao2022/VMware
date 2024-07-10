@@ -1,0 +1,5 @@
+# this script is to connect to Vcenter server
+# written by pengchao
+
+Connect-VIServer -Server chinavcenter.bmw.com
+
