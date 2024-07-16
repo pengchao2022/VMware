@@ -1,0 +1,51 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Windows\system32> diskpart
+
+Microsoft DiskPart version 10.0.20348.1
+
+Copyright (C) Microsoft Corporation.
+On computer: BJWTREESIZE01
+
+DISKPART> list volume
+
+  Volume ###  Ltr  Label        Fs     Type        Size     Status     Info
+  ----------  ---  -----------  -----  ----------  -------  ---------  --------
+  Volume 0     D                       DVD-ROM         0 B  No Media
+  Volume 1     C                NTFS   Partition     59 GB  Healthy    Boot
+  Volume 2                      FAT32  Partition    100 MB  Healthy    System
+
+DISKPART> select volume 1
+
+Volume 1 is the selected volume.
+
+
+DISKPART> extend size=20480
+
+DiskPart successfully extended the volume.
+
+DISKPART> list disk
+
+  Disk ###  Status         Size     Free     Dyn  Gpt
+  --------  -------------  -------  -------  ---  ---
+* Disk 0    Online           80 GB  1024 KB        *
+
+DISKPART> list volume
+
+  Volume ###  Ltr  Label        Fs     Type        Size     Status     Info
+  ----------  ---  -----------  -----  ----------  -------  ---------  --------
+  Volume 0     D                       DVD-ROM         0 B  No Media
+* Volume 1     C                NTFS   Partition     79 GB  Healthy    Boot
+  Volume 2                      FAT32  Partition    100 MB  Healthy    System
+
+DISKPART> exit
+
+Leaving DiskPart...
+PS C:\Windows\system32>
+PS C:\Windows\system32>
+PS C:\Windows\system32>
+PS C:\Windows\system32>
+PS C:\Windows\system32>
